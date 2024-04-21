@@ -1,0 +1,43 @@
+# Open3D
+
+```
+[Open3D WARNING] GLFW Error: GLX: Failed to create context: GLXBadFBConfig
+[Open3D WARNING] Failed to create window
+[Open3D WARNING] [DrawGeometries] Failed creating OpenGL window.
+```
+
+by running `export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6`  in your terminal you are good to go. 
+
+
+
+# cuda
+
+```
+gedit ~/.bashrc
+
+export PATH=/usr/local/cuda-xx.x/bin:${PATH}
+export LD_LIBRARY_PATH=/usr/local/cuda-xx.x/lib64:${LD_LIBRARY_PATH}
+
+source ~/.bashrc
+
+nvcc --version
+```
+
+
+# cudnn
+
+```c++
+# 当出现test.c:1:10: fatal error: FreeImage.h: 没有那个文件或目录
+
+   | #include "FreeImage.h" 
+   |     ^~~~~~~~~~~~~
+
+# 输入
+
+sudo apt-get install libfreeimage3 libfreeimage-dev
+```
+
+
+
+
+
