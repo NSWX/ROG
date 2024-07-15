@@ -1,3 +1,33 @@
+# ancaonda
+
+1. apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+
+2.  sh Anaconda3-2023.09-0-Linux-x86_64.sh（自己的文件名）
+
+3. source ~/.bashrc
+
+conda update --all
+
+4. 快捷方式：
+
+> [Desktop Entry]
+>
+> Name=Anaconda
+>
+> Version=1.0
+>
+> Type=Application
+>
+> Exec=/home/*****/anaconda3/bin/anaconda-navigator
+>
+> Icon=/home/*****/lib/python3.1/site-packages/anaconda_navigator/static/images/anaconda-icon-256x256.png
+>
+> Terminal=false
+>
+> StartupNotify=true
+
+
+
 # Open3D
 
 ```
