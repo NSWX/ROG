@@ -10,21 +10,14 @@ conda update --all
 
 4. 快捷方式：
 
-> [Desktop Entry]
->
-> Name=Anaconda
->
-> Version=1.0
->
-> Type=Application
->
-> Exec=/home/*****/anaconda3/bin/anaconda-navigator
->
-> Icon=/home/*****/lib/python3.1/site-packages/anaconda_navigator/static/images/anaconda-icon-256x256.png
->
-> Terminal=false
->
-> StartupNotify=true
+[Desktop Entry]
+Name=Anaconda
+Version=1.0
+Type=Application
+Exec=/home/*****/anaconda3/bin/anaconda-navigator
+Icon=/home/*****/lib/python3.1/site-packages/anaconda_navigator/static/images/anaconda-icon-256x256.png
+Terminal=false
+StartupNotify=true
 
 
 
