@@ -49,15 +49,97 @@ nvcc --version
 
 # cudnn
 
-```c++
-# 当出现test.c:1:10: fatal error: FreeImage.h: 没有那个文件或目录
+1、cudnn安装：
 
-   | #include "FreeImage.h" 
+sudo apt-get install zlib1g
+
+sudo dpkg -i cudnn-local-repo-${distro}-8.x.x.x_1.0-1_amd64.deb
+
+sudo cp /var/cudnn-local-repo-*/cudnn-local-*-keyring.gpg /usr/share/keyrings/
+
+sudo apt-get update
+
+sudo apt-get install libcudnn8=8.x.x.x-1+cudaX.Y
+
+sudo apt-get install libcudnn8-dev=8.x.x.x-1+cudaX.Y
+
+sudo apt-get install libcudnn8-samples=8.x.x.x-1+cudaX.Y
+
+
+
+2、cudnn验证：
+
+cp -r /usr/src/cudnn_samples_v8/ $HOME
+
+ cd $HOME/cudnn_samples_v8/mnistCUDNN
+
+make clean && make
+
+ ./mnistCUDNN
+
+
+
+3、问题及解决方案：
+
+问题1：
+
+#当出现g++: No such file or directory
+
+
+
+sudo apt-get install g++
+
+
+
+lsb_release -a
+
+
+
+sudo gedit /etc/apt/sources.list
+
+
+
+#阿里源
+
+deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+
+deb-src http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+
+deb-src http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+
+deb-src http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+
+deb-src http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
+
+deb-src http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
+
+
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+
+
+问题2：
+
+#当出现test.c:1:10: fatal error: FreeImage.h: 没有那个文件或目录
+
+  1 | #include "FreeImage.h"
+
    |     ^~~~~~~~~~~~~
 
-# 输入
+#输入
 
-sudo apt-get install libfreeimage3 libfreeimage-dev
+sudo apt-get install libfreeimage
 ```
 
 
