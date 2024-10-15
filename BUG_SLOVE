@@ -41,6 +41,7 @@ gedit ~/.bashrc
 export PATH=/usr/local/cuda-xx.x/bin:${PATH}
 export LD_LIBRARY_PATH=/usr/local/cuda-xx.x/lib64:${LD_LIBRARY_PATH}
 
+
 source ~/.bashrc
 
 nvcc --version
@@ -141,6 +142,31 @@ sudo apt-get upgrade
 
 sudo apt-get install libfreeimage
 ```
+
+Kinect V2 Ubuntu 驱动安装CUDA相关错误解决
+对libfreenect2库进行make时报错：
+
+fatal error: helper_math.h: No such file or directory
+
+错误原因：
+
+11.6版本之前的CUDA安装时会附带安装CUDA Samples，helper_math.h文件在/xxxx/NVIDIA_CUDA-10.1_Samples/common/inc/helper_math.h位置；11.6版本之后不再附带Samples，从而找不到该文件。
+
+解决方法：
+
+    手动下载Samples
+
+1.1. 从github克隆Samples库
+
+git clone https://github.com/NVIDIA/cuda-samples.git
+
+1.2. 在cmake之前添加相应路径到CPATH
+
+export CPATH=$CPATH:/home/xxxx/cuda-samples/Common/
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/freenect2
+make
+make install
 
 
 
